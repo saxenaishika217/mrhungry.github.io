@@ -1,0 +1,10 @@
+                                                                                                                    Comment_App
+
+1. Install node modules within Comment-App folder using command npm install.
+2. To start front end of application use ng serve command in cmd.
+3. First create a local connection in Robo 3T with name CommentApp to store in local database. url = "mongodb://localhost:27017/CommentApp"
+4. Install node modules in server directory.
+5. To start node server of the app ,run command node app.js in server directory within Comment-App.  
+6. For testing Api use postman app.
+
+

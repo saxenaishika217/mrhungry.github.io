@@ -1,0 +1,38 @@
+<!-- <div class="container">
+    <h2 class="mt-5 mb-4">Angular Stripe Checkout Example</h2>
+    <div class="col-md-5 mb-2">
+      <button (click)="makePayment(15)" class="btn btn-danger btn-block">Pay $15</button>
+    </div>
+    <div class="col-md-5 mb-2">
+      <button (click)="makePayment(25)" class="btn btn-primary btn-block">Pay $25</button>
+    </div>
+    <div class="col-md-5">
+      <button (click)="makePayment(35)" class="btn btn-success btn-block">Pay $35</button>
+    </div>
+  </div> -->
+  <app-navbar></app-navbar>
+  <main style=" background: url(https://rvs-order-summary-component.netlify.app/images/pattern-background-desktop.svg)">
+    <div class="card">
+        <div class="card-header">
+            <img src="https://assets.codepen.io/652/photo-1520174691701-bc555a3404ca.jpeg" alt="">
+        </div>
+        <div class="card-body">
+            <div class="card-title">Order Summary</div>
+            <div class="card-text">Want a delicious meal, but no time we will deliver it hot and yummy!</div>
+            <div class="card-plan">
+                <div class="card-plan-img"><img src="https://www.svgrepo.com/show/130778/fast-food.svg" alt=""></div>
+                <div class="card-plan-text">
+                    <div class="card-plan-title">Total Amount</div>
+                    <div class="card-plan-price"> &nbsp; &nbsp; &nbsp; ₹{{totalprice}}</div>
+                </div>
+                <!-- <div class="card-plan-link"><a href="#!">Change</a></div> -->
+            </div>
+            <div class="card-payment-button">
+                <button (click)="makePayment(totalprice)">Proceed to Payment</button>
+            </div>
+            <div class="card-cancel-button">
+                <button>Cancel Order</button>
+            </div>
+        </div>
+    </div>
+</main>

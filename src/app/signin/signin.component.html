@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <body
+    Style="height:100vh; background-image:url('assets/image/login-bg.jpg'); background-repeat: no-repeat;
+ background-size: cover; "
+  >
+    <div>
+      <app-navbar></app-navbar>
+    </div>
+    <div style="width: 40%; margin-left: 30%; position: relative">
+      <div>
+        <h1
+          style="
+            text-align: center;
+            margin-top: 40px;
+            color: white;
+            font-weight: 700;
+            margin-top: 80px;
+          "
+        >
+          Login
+        </h1>
+        <h6
+          style="
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+            color: wheat;
+          "
+        >
+          Don't have an account?<span>
+            <a
+              [routerLink]="['/sign-up']"
+              style="cursor: pointer; color: white; text-decoration: none"
+            >
+              Sign Up</a
+            ></span
+          >
+        </h6>
+      </div>
+
+      <div style="margin: 50px; color: white">
+        <form [formGroup]="signinForm" class="form" novalidate>
+          <div class="form-group">
+            <label for="email"><b>Email</b></label>
+            <input
+              style="margin-top: 5px"
+              id="mail"
+              name="mail"
+              formControlName="email"
+              style="margin-top: 5px"
+              class="form-control"
+              type="text"
+              placeholder="Enter Email"
+              pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+              required
+            />
+          </div>
+          <div class="form-group" style="margin-top: 20px">
+            <label for="psw"><b>Password</b></label>
+            <input
+              name="password"
+              formControlName="password"
+              style="margin-top: 5px"
+              class="form-control"
+              type="password"
+              placeholder="Enter Password"
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+              required
+            />
+          </div>
+          <div class="forgot">
+            <a
+              [routerLink]="['/forgot-password']"
+              style="cursor: pointer; color: wheat; text-decoration: none"
+              >Forgot your password?</a
+            >
+          </div>
+
+          <!-- <div class="d-grid gap-2" style="margin-top: 20px;">
+            <button type="submit" class="btn btn-primary" ><img src="assets/icon/lock.jpg" style="width: 35px;
+                float: left;">Sign Up</button> -->
+          <div class="d-grid gap-2" style="margin-top: 20px">
+            <button
+              (click)="login()"
+              type="submit"
+              class="btn btn-primary"
+              style="
+                align-items: center;
+                width: 40%;
+                margin: 30%;
+                margin-top: 20px;
+                font-weight: 600;
+              "
+            >
+              Sign In
+            </button>
+            <!-- <button [routerLink]="['/feedback']">Test</button> -->
+
+            <!-- <button type="button" class="btn btn-primary"><span class="bi bi-lock"></span> Sample Button</button> -->
+          </div>
+        </form>
+      </div>
+    </div>
+    <div id="toast">
+      <!-- <div id="img">Hurray!!</div> -->
+      <div id="desc">{{toastMsg}}</div>
+    </div>
+  </body>
+</html>

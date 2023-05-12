@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+ 
+  <body>
+    <app-navbar></app-navbar>
+
+    <div id="toast">
+      <!-- <div id="img">Hurray!!</div> -->
+      <div id="desc">Successfully Logout</div>
+    </div>
+    <div class="carousel">
+      <ngb-carousel class="myclass" [showNavigationIndicators]="true">
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper">
+            <img
+              src="https://cdn.concreteplayground.com/content/uploads/2017/08/Glamp-Cocktail-Bar-32-1920x1440.jpg"
+              alt="Angular Carousel 1"
+            />
+          </div>
+          <div class="carousel-caption"></div>
+        </ng-template>
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper">
+            <img
+              src="https://wallpaperaccess.com/full/767033.jpg"
+              alt="Angular Carousel 2"
+            />
+          </div>
+        </ng-template>
+      </ngb-carousel>
+    </div>
+    <div class="search" style="width: 45%">
+      <form class="d-flex">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Search"
+          style="height: 45px"
+          aria-label="Search"
+        />
+        <button class="btn" type="submit">Search</button>
+      </form>
+    </div>
+    <!-- <div
+      class="container"
+      style="align-items: center; width: 900px; margin-top: 75px"
+    >
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="col">
+          <div class="card">
+            <img src="assets/image/order.jpg" class="card-img-top" alt="..." />
+
+            <h5 class="card-title">Order Food Online</h5>
+          
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="assets/image/go-out.jpg" class="card-img-top" alt="..." />
+
+            <h5 class="card-title">Go Out for Dinner</h5>
+           
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="assets/image/member.jpg" class="card-img-top" alt="..." />
+
+            <h5 class="card-title">Privileged Member</h5>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="assets/image/club.jpg" class="card-img-top" alt="..." />
+
+            <h5 class="card-title">Nightlife & Clubs</h5>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <div class="container" style="align-items: center; width: 80%">
+      <div style="margin-top: 100px">
+        <h1>Collections</h1>
+        <p style="font-size: 18px">
+          Explore curated lists of top restaurants, cafes, pubs, and bars in
+          Delhi NCR, based on trends
+        </p>
+
+        <div class="row row cols-4 row-cols-md-4 g-4">
+          <div class="col" *ngFor="let item of collection" >
+            <div class="collect-card" [routerLink]="['/menuitems',item.name]">
+              <img src="{{ item.image }}" class="col-card-img-top" alt="..." />
+              <p class="col-card-text">{{ item.name }}</p>
+
+              <!-- <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top: 100px">
+        <h2>Restaurants Near me</h2>
+        <div style="width: 100%; height: 300px; margin-top: 20px">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14016.30134453898!2d77.3255213!3d28.5675004!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x52918cc1b13e17cf!2sDomino&#39;s%20Pizza!5e0!3m2!1sen!2sin!4v1653747127577!5m2!1sen!2sin"
+            width="100%"
+            height="350"
+            style="border: solid 5 ;border-radius: 10px;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+   <footer class="parallax-section">
+      <div class="container" style="text-align: center;">
+        <div class="row">
+          <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="0.6s">
+            <h2 class="heading">Contact Info.</h2>
+            <div class="ph">
+              <p><i class="fa fa-phone"></i> Phone</p>
+              <h4>012232323232</h4>
+            </div>
+            <div class="address">
+              <p><i class="fa fa-map-marker"></i> Our Location</p>
+              <h4>120 XYZ location</h4>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="0.6s">
+            <h2 class="heading">Open Hours</h2>
+              <p>Sunday <span>10:30 AM - 10:00 PM</span></p>
+              <p>Mon-Fri <span>9:00 AM - 8:00 PM</span></p>
+              <p>Saturday <span>11:30 AM - 10:00 PM</span></p>
+          </div>
+          <!-- <div class="col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="0.6s">
+            <h2 class="heading">Follow Us</h2>
+            <ul class="social-icon">
+              <li><a href="#" class="fa fa-facebook wow bounceIn" data-wow-delay="0.3s"></a></li>
+              <li><a href="#" class="fa fa-twitter wow bounceIn" data-wow-delay="0.6s"></a></li>
+              <li><a href="#" class="fa fa-behance wow bounceIn" data-wow-delay="0.9s"></a></li>
+              <li><a href="#" class="fa fa-dribbble wow bounceIn" data-wow-delay="0.9s"></a></li>
+              <li><a href="#" class="fa fa-github wow bounceIn" data-wow-delay="0.9s"></a></li>
+            </ul>
+          </div> -->
+        </div>
+      </div>
+    </footer> 
+  </body>
+</html>

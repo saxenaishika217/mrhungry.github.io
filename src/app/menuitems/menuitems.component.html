@@ -1,0 +1,86 @@
+<div>
+  <app-navbar></app-navbar>
+</div>
+<body style="overflow: hidden">
+  <div class="container" style=" margin-top: 25px">
+    <div class="row row cols-4 row-cols-md-4 g-4">
+      <div style="display: contents" *ngFor="let item of submenu">
+        <div class="card" *ngIf="this.id == item.dish_type">
+          <a class="item__img__container">
+            <img class="item__img" src="{{ item.image }}" />
+          </a>
+          <div class="item__info">
+            <h1>
+              <a class="item__title" >{{ item.name }}</a>
+            </h1>
+            <!-- <p class="item__desc">
+              Our Equilibrium collection promotes balance and calm.
+            </p> -->
+            <div class="item__price__time">
+              <div class="item__price">
+                <!-- <img
+                  class="item__icon"
+                  src="https://kellychi22.github.io/frontend-mentor-solutions/04-nft-preview-card-component/images/icon-ethereum.svg"
+                  alt="ethereum-icon"
+                /> -->
+                <span class="price-eth">Rs {{ item.price }}</span>
+              </div>
+              <div class="item__time">
+               <!-- <img
+                  (click)="launch_toast()"
+                  class="item__icon"
+                  src="assets/image/addcart.svg"
+                  alt="clock-icon"
+                /> -->
+
+                <!-- <span class="days-left">3 days left</span> -->
+              </div>
+            </div>
+            <!-- <div class="item__creator">
+              <img
+                class="creator__img"
+                src="https://kellychi22.github.io/frontend-mentor-solutions/04-nft-preview-card-component/images/image-avatar.png"
+                alt="creator_avator"
+              />
+              <p class="creator__info">
+                Creation of <a class="creator__name" href="#">Jules Wyvern</a>
+              </p>
+            </div> -->
+            <div style="display: flex; float: right; margin: 5px">
+              <div class="quant" (click)="minus(item._id)">-</div>
+              <div
+                style="
+                  font-weight: 600;
+                  margin: 4px;
+                  font-size: 20px;
+                  color: yellow;
+                "
+              >
+                {{item.quantity}}
+              </div>
+              <div class="quant" (click)="add(item._id)">+</div>
+            </div>
+          </div>
+        </div>
+       
+      </div>
+      <div style="width:90%;">
+        <button class="btn btn-outline-warning" type="submit" style="background-color: #ffcc00;
+        float: right;
+        color: black;
+        margin-top: 30px;" (click)="Addcart()">Add to Cart</button>
+      
+
+      
+        <button class="btn btn-outline-warning" type="submit" style="background-color: #ffcc00;
+        float: right;
+        color: black;
+        margin-top: 30px; margin-right: 10px;" [routerLink]="['/checkout']">Go to cart</button>
+      </div>
+    </div>
+  </div>
+  <div id="toast">
+    <!-- <div id="img">Hurray!!</div> -->
+    <div id="desc">{{menutoastmsg}}</div>
+  </div>
+</body>

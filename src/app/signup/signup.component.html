@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+  <body
+    Style="height:100vh; background-image:url('assets/image/login-bg.jpg'); background-repeat: no-repeat;
+ background-size: cover; "
+  >
+    <div>
+      <app-navbar></app-navbar>
+    </div>
+    <div
+      class="container"
+      style="width: 40%; margin-left: 30%; position: relative"
+    >
+      <div>
+        <h1
+          style="
+            text-align: center;
+            margin-top: 40px;
+            color: white;
+            font-weight: 700;
+            margin-top: 20px;
+          "
+        >
+          Signup
+        </h1>
+        <h6
+          style="
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+            color: wheat;
+          "
+        >
+          Already have an account?
+          <span>
+            <a
+              [routerLink]="['/sign-in']"
+              style="cursor: pointer; color: white; text-decoration: none"
+              >Sign in</a
+            ></span
+          >
+        </h6>
+      </div>
+
+      <div style="margin: 50px; color: white">
+        <form [formGroup]="signupForm" class="form" novalidate>
+          <div class="form-group">
+            <label><b>Name</b></label>
+            <input
+              id="name"
+              name="name"
+              formControlName="name"
+              style="margin-top: 5px"
+              class="form-control"
+              type="text"
+              placeholder="Enter Name"
+              required
+            />
+          </div>
+          <div
+            *ngIf="
+              signupForm.controls['name'].invalid &&
+              signupForm.controls['name'].touched
+            "
+          >
+            <div
+              *ngIf="signupForm.controls['name'].errors?.['required']"
+              class="alert alert-danger"
+            >
+              Name is required.
+            </div>
+          </div>
+          <div class="form-group" style="margin-top: 20px">
+            <label><b>Email</b></label>
+            <input
+              id="mail"
+              name="mail"
+              formControlName="email"
+              style="margin-top: 5px"
+              class="form-control"
+              type="text"
+              placeholder="Enter Email"
+              pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+              required
+            />
+          </div>
+          <div
+            *ngIf="
+              signupForm.controls['email'].invalid &&
+              signupForm.controls['email'].touched
+            "
+          >
+            <div
+              *ngIf="signupForm.controls['email'].errors?.['required']"
+              class="alert alert-danger"
+            >
+              Mail is required.
+            </div>
+            <div
+              *ngIf="signupForm.controls['email'].errors?.['pattern']"
+              class="alert alert-danger"
+            >
+              Invalid Mail.
+            </div>
+          </div>
+          <div class="form-group" style="margin-top: 20px">
+            <label><b>Password</b></label>
+            <input
+              name="password"
+              formControlName="password"
+              style="margin-top: 5px"
+              class="form-control"
+              type="password"
+              placeholder="Enter Password"
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+              required
+            />
+          </div>
+          <p>
+            Must contain at least one number, one uppercase and lowercase
+            letter, and at least 8 or more characters
+          </p>
+          <div
+            *ngIf="
+              signupForm.controls['password'].invalid &&
+              signupForm.controls['password'].touched
+            "
+          >
+            <div
+              *ngIf="signupForm.controls['password'].errors?.['required']"
+              class="alert alert-danger"
+            >
+              Password is required.
+            </div>
+            <div
+              *ngIf="signupForm.controls['password'].errors?.['pattern']"
+              class="alert alert-danger"
+            >
+              Password Invalid.
+            </div>
+          </div>
+          <div class="form-group" style="margin-top: 20px">
+            <label><b>Mobile</b></label>
+            <input
+              formControlName="mobile"
+              style="margin-top: 5px"
+              class="form-control input-md text-box single-line"
+              id="ContactNumber"
+              maxlength="10"
+              name="ContactNumber"
+              required="required"
+              type="tel"
+              pattern="^((\\+91-?)|0)?[0-9]{10}$"
+              placeholder="Enter Mobile Number"
+              required
+            />
+          </div>
+          <div
+            *ngIf="
+              signupForm.controls['mobile'].invalid &&
+              signupForm.controls['mobile'].touched
+            "
+          >
+            <div
+              *ngIf="signupForm.controls['mobile'].errors?.['required']"
+              class="alert alert-danger"
+            >
+              Mobile number is required.
+            </div>
+            <div
+              *ngIf="signupForm.controls['mobile'].errors?.['pattern']"
+              class="alert alert-danger"
+            >
+              Invalid Number.
+            </div>
+          </div>
+
+          <div class="d-grid gap-2" style="margin-top: 20px">
+            <button
+              type="submit"
+              class="btn btn-primary"
+              (click)="signUp()"
+              style="
+                align-items: center;
+                width: 40%;
+                font-weight: 600;
+                margin-left: 30%;
+                margin-top: 20px;
+              "
+            >
+              Sign Up
+            </button>
+            <p style="padding: 10px; text-align: center; color: white">
+              By clicking the "Sign Up" button,you are creating an account,and
+              you agree to the Terms of Use
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

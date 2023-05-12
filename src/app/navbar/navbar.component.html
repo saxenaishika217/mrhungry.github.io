@@ -1,0 +1,108 @@
+<nav class="navbar navbar-expand-lg" style="background-color: black">
+  <div class="container-fluid">
+    <a class="navbar-brand navbar-head" href="#"
+      >Mr.Hungry<img
+        class="nav-image"
+        src="http://www.clipartbest.com/cliparts/9cp/LRd/9cpLRdqgi.jpg"
+    /></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul
+        class="navbar-nav me-auto mb-2 mb-lg-0"
+        style="font-size: 16px; font-weight: 600"
+      >
+        <li class="nav-item active">
+          <a class="nav-link navbar" aria-current="page" href="#">Home</a>
+        </li> 
+        <li class="nav-item active">
+          <a class="nav-link navbar" aria-current="page" href="#"[routerLink]="['/orderhistory']" >Order History</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link navbar" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link navbar" href="#">Contact Us</a>
+        </li> -->
+        <!-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle navbar" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li> -->
+        <!-- <li class="nav-item">
+          <a class="nav-link disabled">Disabled</a>
+        </li> -->
+        <!-- <div style="margin-left: 20px;">
+        <form class="d-flex" >
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-primary" type="submit">Search</button>
+          
+        </form>
+        </div> -->
+      </ul>
+      <div class="row" *ngIf="this.CurrentUser">
+        <div style="display: contents">
+          Welcome &nbsp;
+          <span style="color: yellow; font-weight: 500"
+            >{{ UserName }} &nbsp;&nbsp;&nbsp;</span
+          >
+        </div>
+        <div class="col">
+          <img
+            style="width: 50px; height: 45px; margin-top: -8px;cursor: pointer;"
+            src="assets/image/cart.svg" [routerLink]="['/checkout']"
+          /><span style="font-weight: 600; color: yellow; font-size: 15px">{{
+            cartcount
+          }}</span>
+        </div>
+        <div class="col">
+          <button
+            class="btn btn-danger"
+            ng-If="isClicked"
+            type="submit"
+            (click)="logout()"
+          >
+            Logout
+          </button>
+        </div>
+      </div>
+      <div class="row" [hidden]="this.CurrentUser">
+        <div class="col">
+          <button
+            class="btn btn-light"
+            ng-If="isClicked"
+            type="submit"
+            [routerLink]="['/sign-in']"
+          >
+            Login
+          </button>
+        </div>
+        <div class="col">
+          <button
+            class="btn btn-light"
+            type="submit"
+            [routerLink]="['/sign-up']"
+            style="width: 90px"
+          >
+            Sign Up
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,339 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: 'Catamaran', sans-serif;
+}
+
+body {
+  background-image: url("https://assets.codepen.io/652/photo-1520174691701-bc555a3404ca.jpeg");
+  background-position: center;
+  background-size: cover;
+  background-attachment:fixed;
+  background-repeat: no-repeat;
+}
+
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+// 
+
+.card {
+  background-color: #ffffffb3;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.1rem 3rem #00000019;
+  //display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 20px 1rem 10px;
+  border-radius: 16px;
+  height: 330px;
+}
+
+.card_content {
+  padding: 0.1rem 0;
+}
+
+.price {
+  position: absolute;
+  bottom: 10px;
+  right: -3px;
+  border-top-left-radius: 500rem;
+  border-bottom-left-radius: 500rem;
+  padding-right: 25px;
+  padding-left: 35px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-weight: 700;
+  font-size: 22px;
+  color: #fff;
+  background: #538e00;
+}
+
+.card_title {
+  margin-top: 0;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.card_text {
+  margin-top: 16px;
+  font-size: 17px;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+
+/* general styling */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Outfit", sans-serif;
+  font-size: 1rem;
+  color: hsl(215, 51%, 70%);
+  background-color: hsl(217, 54%, 11%);
+}
+ .quant{
+  font-weight: 800;
+  margin: 5px;
+  font-size: 18px;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* seperate styling */
+
+.card {
+  max-width: 15rem;
+  padding: 1.2rem;
+  border-radius: 1.2rem;
+  margin: 10px;
+  background-image: linear-gradient(
+    180deg,
+    hsl(216, 50%, 18%),
+    hsl(217, 54%, 13%)
+  );
+  transition: transform 300ms ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.item__img__container {
+  display: block;
+  position: relative;
+  max-width: 100%;
+  height: 50%;
+  border-radius: 0.9rem;
+  overflow: hidden;
+}
+
+.item__img__container::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  background-color: hsl(178, 100%, 50%);
+  opacity: 0;
+}
+
+.item__img__container::after {
+  position: absolute;
+ // content: url("https://kellychi22.github.io/frontend-mentor-solutions/04-nft-preview-card-component/images/icon-view.svg");
+  inset: 42% 42%;
+  opacity: 0;
+}
+
+.item__img__container:hover::before {
+  opacity: 0.3;
+}
+
+.item__img__container:hover::after {
+  opacity: 1;
+}
+
+.item__info {
+  padding: 0 0.4rem;
+  margin-top: 10px;
+}
+
+.item__title {
+  margin-bottom: 0;
+  color: hsl(0, 0%, 100%);
+  font-size: 1.4rem;
+  text-decoration: none;
+}
+
+.item__title:hover {
+  color: hsl(178, 100%, 50%);
+}
+
+.item__desc {
+  margin: 0.7em 0 1.2em 0;
+  font-weight: 300;
+  line-height: 1.5em;
+}
+
+.item__price__time {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 1em;
+  border-bottom: 1px solid rgba(139, 172, 218, 0.2);
+}
+
+.item__price,
+.item__time {
+  display: flex;
+  align-items: center;
+}
+
+.item__icon {
+ position: absolute;
+ margin-left: -50px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.price-eth {
+  color: hsl(178, 100%, 50%);
+  font-weight: 600;
+}
+
+.item__creator {
+  display: flex;
+  align-items: center;
+  margin-top: 0.6em;
+}
+
+.creator__img {
+  width: 12%;
+  margin-right: 1em;
+  border: 0.15em solid rgba(255 255 255/0.6);
+  border-radius: 50%;
+}
+
+.creator__name {
+  cursor: pointer;
+  color: hsl(0, 0%, 100%);
+  text-decoration: none;
+}
+
+.creator__name:hover {
+  color: hsl(178, 100%, 50%);
+}
+
+/* attribution styling */
+
+.attribution {
+  position: absolute;
+  bottom: 0;
+  opacity: 0.9;
+}
+
+.attribution a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.attribution a:hover {
+  color: hsl(178, 100%, 50%);
+}
+
+
+
+
+
+#toast {
+  visibility: hidden;
+  max-width: 40px;
+  height: 50px;
+  /*margin-left: -125px;*/
+  margin: auto;
+  background-color: rgb(255, 255, 255);
+  color: rgb(19, 28, 100);
+  text-align: center;
+  border-radius: 2px;
+
+  position: fixed;
+  z-index: 1;
+  left: 0;right:0;
+  bottom: 30px;
+  font-size: 17px;
+  white-space: nowrap;
+}
+#toast #img{
+width: 50px;
+height: 50px;
+  
+  float: left;
+  
+  padding-top: 16px;
+  padding-bottom: 16px;
+  
+  box-sizing: border-box;
+
+  
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+}
+#toast #desc{
+
+  font-weight: 600;
+  color: rgb(11, 11, 11);
+ 
+  padding: 16px;
+  
+  overflow: hidden;
+white-space: nowrap;
+}
+
+#toast.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, expand 0.5s 0.5s,stay 3s 1s, shrink 0.5s 2s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, expand 0.5s 0.5s,stay 3s 1s, shrink 0.5s 4s, fadeout 0.5s 4.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes expand {
+  from {min-width: 50px} 
+  to {min-width: 350px}
+}
+
+@keyframes expand {
+  from {min-width: 50px}
+  to {min-width: 350px}
+}
+@-webkit-keyframes stay {
+  from {min-width: 350px} 
+  to {min-width: 350px}
+}
+
+@keyframes stay {
+  from {min-width: 350px}
+  to {min-width: 350px}
+}
+@-webkit-keyframes shrink {
+  from {min-width: 350px;} 
+  to {min-width: 50px;}
+}
+
+@keyframes shrink {
+  from {min-width: 350px;} 
+  to {min-width: 50px;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;} 
+  to {bottom: 60px; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 60px; opacity: 0;}
+}
